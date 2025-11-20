@@ -281,6 +281,21 @@ class LightCompressorPlugin : FlutterPlugin, MethodCallHandler,
                     videoName
                 )
             }
+        } else {
+            compressVideo(
+                path,
+                result,
+                quality,
+                true,
+                isMinBitrateCheckEnabled,
+                videoBitrateInMbps,
+                disableAudio,
+                keepOriginalResolution,
+                videoHeight,
+                videoWidth,
+                saveAt,
+                videoName
+            )
         }
     }
 
@@ -307,6 +322,12 @@ class LightCompressorPlugin : FlutterPlugin, MethodCallHandler,
                 permissions,
                 1
             )
+            compressVideo(
+                path, result, quality, true, isMinBitrateCheckEnabled,
+                videoBitrateInMbps, disableAudio, keepOriginalResolution, videoHeight,
+                videoWidth, saveAt, videoName
+            )
+        } else {
             compressVideo(
                 path, result, quality, true, isMinBitrateCheckEnabled,
                 videoBitrateInMbps, disableAudio, keepOriginalResolution, videoHeight,
